@@ -78,23 +78,25 @@ describe('checkCollision', () => {
 
     test('detects collision with filled cell', () => {
         const board = createEmptyBoard();
-        board[1][1].filled = true;
+
+        // Die Zelle, auf die der mittlere Block des T-Tetrominos trifft
+        board[2][2].filled = true;
 
         const tet: Tetromino = {
             type: 'T',
             shape: [
                 [0, 1, 0],
                 [1, 1, 1],
-                [0, 0, 0]
+                [0, 0, 0],
             ],
             color: '',
-            position: { x: 1, y: 0 }
+            position: { x: 1, y: 0 },
         };
 
-
-        // Der Block in der Mitte (shape[1][1]) landet auf board[1][1]
+        // offsetY = 1 -> Block shape[1][1] landet auf board[2][2]
         expect(checkCollision(board, tet, 0, 1)).toBe(true);
     })
+
 });
 
 describe('mergeTetromino', () => {

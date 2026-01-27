@@ -14,11 +14,21 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up Environment
-        run: echo "Setting up build environment..."
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
 
       - name: Install dependencies
-        run: npm install 
+        run: npm install
 
       - name: Run Build
-        run: npm run build 
+        run: npm run build
+
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: production-files
+          path: dist/
+          retention-days: 5

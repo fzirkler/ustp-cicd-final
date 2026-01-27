@@ -66,7 +66,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: production-files-ubuntu-latest
-          path: dist
+          path: .
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -74,7 +74,7 @@ jobs:
       - name: Upload artifact for GitHub Pages
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: .
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4

@@ -1,0 +1,21 @@
+name: Spellcheck Markdown
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  spellcheck:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run codespell on Markdown files
+        uses: codespell-project/actions-codespell@v2
+        with:
+          path: "**/*.md"
+          ignore_words_list: "vscode,github,ci,cicd"

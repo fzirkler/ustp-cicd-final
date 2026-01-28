@@ -3,6 +3,8 @@
 Dieses Repository enthält das Tetris‑Projekt für die USTP CI/CD‑Abschlussaufgabe.  
 Die Anwendung wird automatisch gebaut, getestet und veröffentlicht, sobald ein passender Tag (`vX.X.X`) gepusht wird.
 
+BLAA
+
 ---
 
 ## GitHub Page

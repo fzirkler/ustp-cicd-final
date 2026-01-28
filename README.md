@@ -30,6 +30,9 @@ npm install
 ```bash
 npm run dev
 ```
+Das ist ein bewußter Fehller zum testen des Spellcheks.
+
+
 
 ### Anwendung builden
 

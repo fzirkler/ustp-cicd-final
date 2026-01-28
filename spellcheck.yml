@@ -1,0 +1,36 @@
+matrix:
+  - name: Markdown
+    aspell:
+      lang: en,de
+      ignore-case: true
+      extra-dicts:
+        - de_DE
+        - en_US
+    encoding: utf-8
+
+    pipeline:
+      - pyspelling.filters.markdown:
+          markdown_extensions:
+            - pymdownx.superfences
+      - pyspelling.filters.html:
+          comments: false
+          ignores:
+            - code
+            - pre
+
+    sources:
+      - "**/*.md"
+
+    default_encoding: utf-8
+
+    # Wörter, die NICHT als Fehler markiert werden sollen
+    ignore:
+      - vscode
+      - github
+      - ci
+      - cicd
+      - tetris
+      - workflow
+      - yaml
+      - markdown
+      - spellcheck

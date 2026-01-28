@@ -1,10 +1,9 @@
-name: Spellcheck Markdown
+name: Spell Check Markdown Files
 
 on:
   pull_request:
-
-permissions:
-  contents: read
+    branches:
+      - '**'
 
 jobs:
   spellcheck:
@@ -12,10 +11,18 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
-      - name: Run codespell on Markdown files
-        uses: codespell-project/actions-codespell@v2
+      - name: Run Markdown Spellcheck
+        uses: rojopolis/spellcheck-github-actions@v0
         with:
-          path: "**/*.md"
-          ignore_words_list: "vscode,github,ci,cicd"
+          config_path: spellcheck.yml
+          task_name: Markdown
+          output_file: spellcheck-output.txt
+
+      - name: Upload Spellcheck Report
+        if: '!cancelled()' # Do not upload artifact if job was cancelled
+        uses: actions/upload-artifact@v4
+        with:
+          name: spellcheck-report
+          path: spellcheck-output.txt 

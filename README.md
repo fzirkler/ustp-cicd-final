@@ -3,6 +3,8 @@
 This repository contains the Tetris project for the USTP CI/CD final assignment.  
 The application is automatically built, tested, and published whenever a matching tag (`vX.X.X`) is pushed.
 
+BLAAA
+
 ---
 
 ## GitHub Page

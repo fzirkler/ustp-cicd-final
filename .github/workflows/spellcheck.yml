@@ -13,9 +13,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Install German dictionary
-        run: sudo apt-get update && sudo apt-get install -y aspell-de
-
       - name: Run Markdown Spellcheck
         uses: rojopolis/spellcheck-github-actions@v0
         with:
@@ -28,4 +25,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: spellcheck-report
-          path: spellcheck-output.txt 
+          path: spellcheck-output.txt

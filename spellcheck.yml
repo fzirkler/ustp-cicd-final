@@ -1,13 +1,10 @@
 matrix:
   - name: Markdown
     aspell:
-      lang: en,de
+      lang: en
       ignore-case: true
-      extra-dicts:
-        - de_DE
-        - en_US
+      personal: spellignore.txt     # Custom ignore wordlist
     encoding: utf-8
-
     pipeline:
       - pyspelling.filters.markdown:
           markdown_extensions:
@@ -17,20 +14,6 @@ matrix:
           ignores:
             - code
             - pre
-
     sources:
-      - "**/*.md"
-
+      - '**/*.md'
     default_encoding: utf-8
-
-    # Wörter, die NICHT als Fehler markiert werden sollen
-    ignore:
-      - vscode
-      - github
-      - ci
-      - cicd
-      - tetris
-      - workflow
-      - yaml
-      - markdown
-      - spellcheck

@@ -1,19 +1,12 @@
 matrix:
-  - name: Markdown
-    aspell:
-      lang: en
-      ignore-case: true
-      personal: spellignore.pws
-    encoding: utf-8
-    pipeline:
-      - pyspelling.filters.markdown:
-          markdown_extensions:
-            - pymdownx.superfences
-      - pyspelling.filters.html:
-          comments: false
-          ignores:
-            - code
-            - pre
-    sources:
-      - '**/*.md'
-    default_encoding: utf-8
+- name: Markdown
+  sources:
+  - '**/*.md'
+  aspell:
+    lang: en # oder 'en', je nach Hauptsprache
+  dictionary:
+    wordlists:
+    - spellignore.pws
+  pipeline:
+  - pyspelling.filters.markdown:
+  - pyspelling.filters.url:

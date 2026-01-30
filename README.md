@@ -1,21 +1,21 @@
 # USTP CI/CD Tetris
 
-Dieses Repository enthält das Tetris‑Projekt für die USTP CI/CD‑Abschlussaufgabe.  
-Die Anwendung wird automatisch gebaut, getestet und veröffentlicht, sobald ein passender Tag (`vX.X.X`) gepusht wird.
+This repository contains the Tetris project for the USTP CI/CD final assignment.  
+The application is automatically built, tested, and published whenever a matching tag (`vX.X.X`) is pushed.
 
 ---
 
 ## GitHub Page
 
-Die Anwendung ist hier erreichbar:
+The application is available here:
 
- **https://fzirkler.github.io/ustp-cicd-final/**
+**https://fzirkler.github.io/ustp-cicd-final/**
 
 ---
 
-## Lokale Entwicklung
+## Local Development
 
-### Voraussetzungen
+### Requirements
 - Node.js 20+
 - npm
 
@@ -25,21 +25,22 @@ Die Anwendung ist hier erreichbar:
 npm install
 ```
 
-### Anwendung lokal starten
+### Start the application locally
 
 ```bash
 npm run dev
 ```
 
-### Anwendung builden
+### Build the application
 
 ```bash
 npm run build
 ```
-Der Build befindet sich anschließend im /dist Verzeichnis.
 
-### Test ausführen
- 
+The build output will be located in the /dist directory.
+
+### Run tests
+
 ```bash
 npm test
 ```
@@ -58,4 +59,5 @@ npm test
 [![Dependabot Updates](https://github.com/fzirkler/ustp-cicd-final/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/fzirkler/ustp-cicd-final/actions/workflows/dependabot/dependabot-updates)
 
 ---
-*Dieses Projekt ist Teil der USTP CI/CD Lehrveranstaltung und dient ausschließlich zu Ausbildungszwecken.*
+
+*This project is part of the USTP CI/CD course and is intended solely for educational purposes.*

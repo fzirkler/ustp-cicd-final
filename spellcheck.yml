@@ -3,7 +3,18 @@ matrix:
     aspell:
       lang: en
       ignore-case: true
-      personal: spellignore.txt     # Custom ignore wordlist
+      extra-dicts:
+        - |
+          personal_ws-1.1 en 0
+          vscode
+          cicd
+          fzirkler
+          https
+          ustp
+          js
+          npm
+          dependabot
+          opensource
     encoding: utf-8
     pipeline:
       - pyspelling.filters.markdown:
